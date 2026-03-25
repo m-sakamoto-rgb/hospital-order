@@ -723,8 +723,7 @@ async function renderOrderHistoryPage() {
 }
 
 async function clearOrderHistory() {
-  if (!confirm('自分の発注履歴をすべて消去しますか？
-※この操作は元に戻せません。')) return;
+  if (!confirm('自分の発注履歴をすべて消去しますか？\n※この操作は元に戻せません。')) return;
   try {
     var res = await gasPost({action:'deleteMyOrders', userId: currentUser.id, userName: currentUser.name});
     if (res.ok) {
